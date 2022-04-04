@@ -51,7 +51,7 @@ class TestProductsModel(TestCase):
         """
         data = self.data1
         url = reverse('store:product_detail', args=[data.slug])
-        self.assertEqual(url, '/item/django-beginners/')
+        self.assertEqual(url, '/django-beginners')
         response = self.client.post(
             reverse('store:product_detail', args=[data.slug]))
         self.assertEqual(response.status_code, 200)
@@ -62,3 +62,15 @@ class TestProductsModel(TestCase):
         """
         data = Product.products.all()
         self.assertEqual(data.count(), 1)
+
+        def test_url_allowed_hosts(self):
+            """
+            Test allowed hosts 
+            """
+            response = self.c.get('/', HTTP_HOST='noaddress.com')
+            self.assertEqual(response.status_code, 400)
+            response = self.c.get('/', HTTP_HOST= 'yourdomain.com')
+            self.assertEqual(response.status_code, 200)
+
+
+    

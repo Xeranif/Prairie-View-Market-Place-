@@ -32,7 +32,7 @@ def BasketView(request):
     stripe.api_key = 'sk_test_51KmOs7Be5RFpBieIuySBL0iZR7NdxAAx0OZsOLD9d3cYbcftbvlJcQBHlI644oylELRudCh8FeirDl9UxqSvPev500NH5Ywe40'
     intent = stripe.PaymentIntent.create(
         amount=total,
-        currency='gbp',
+        currency='usd',
         metadata={'userid': request.user.id}
     )
 

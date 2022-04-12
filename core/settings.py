@@ -98,15 +98,25 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 #Basket session ID
 BASKET_SESSION_ID =  'basket'
 
+<<<<<<< HEAD
 # Stripe Payment
 os.environ.setdefault('STRIPE_PUBLISHABLE_KEY', 'pk_test_51KmOs7Be5RFpBieIhkyQzobvgqEFbACt5Z1fq17xCTxu8XyvNkhAy7mKSGCAfVVVvgzeK3ulmFKTQppLTEsibZ2T00TJtuENFq')
 STRIPE_SECRET_KEY = 'sk_test_51KmOs7Be5RFpBieIuySBL0iZR7NdxAAx0OZsOLD9d3cYbcftbvlJcQBHlI644oylELRudCh8FeirDl9UxqSvPev500NH5Ywe40'
 # stripe listen --forward-to localhost:8000/payment/webhook/
+=======
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+>>>>>>> parent of d22198b (commit to dev3)
 
 # Custom user model
 AUTH_USER_MODEL = 'account.UserBase'
 LOGIN_REDIRECT_URL = '/account/dashboard'
 LOGIN_URL = '/account/login/'
 
-# Email setting
+#E Email seting
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Stripe Payment
+PUBLISHABLE_KEY = 'pk_test_51KmOs7Be5RFpBieIhkyQzobvgqEFbACt5Z1fq17xCTxu8XyvNkhAy7mKSGCAfVVVvgzeK3ulmFKTQppLTEsibZ2T00TJtuENFq'
+SECRET_KEY = 'sk_test_51KmOs7Be5RFpBieIuySBL0iZR7NdxAAx0OZsOLD9d3cYbcftbvlJcQBHlI644oylELRudCh8FeirDl9UxqSvPev500NH5Ywe40'
+STRIPE_ENDPOINT_SECRET = 'whsec_51cb271ab71344e2cecb25bd8266d806af1d472f6a19e69c595c00a9a419742c'
+# stripe listen --forward-to localhost:8000/payment/webhook/

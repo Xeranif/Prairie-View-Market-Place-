@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}PVMP{% endblock %}
+{% block title %}PVMP - Low Prices on general school appliances{% endblock %}
 {% block content %}
 
 <div class="container">
@@ -32,7 +32,7 @@
                   <a class="text-dark text-decoration-none"
                     href="{{ product.get_absolute_url }}">{{ product.title|slice:":50" }}...</a>
                 </p>
-                <div class="fw-bold">£{{product.price}}</div>
+                <div class="fw-bold">${{product.price}}</div>
               </div>
             </div>
           </div>

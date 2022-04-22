@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     "store",
     "basket",
     "account",
-    "payment",
+    "checkout",
     "orders",
     "mptt",
 ]
@@ -106,13 +106,3 @@ LOGIN_URL = "/account/login/"
 
 # E Email seting
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-
-# Stripe Payment
-os.environ.setdefault(
-    "STRIPE_PUBLISHABLE_KEY",
-    "pk_test_51KmOs7Be5RFpBieIhkyQzobvgqEFbACt5Z1fq17xCTxu8XyvNkhAy7mKSGCAfVVVvgzeK3ulmFKTQppLTEsibZ2T00TJtuENFq",
-)
-STRIPE_SECRET_KEY = (
-    "sk_test_51KmOs7Be5RFpBieIuySBL0iZR7NdxAAx0OZsOLD9d3cYbcftbvlJcQBHlI644oylELRudCh8FeirDl9UxqSvPev500NH5Ywe40"
-)
-# stripe listen --forward-to localhost:8000/payment/webhook/

@@ -1,17 +1,81 @@
 {% extends "../sub_base2.html" %}
 {% block title %}Our Team{% endblock %}
-{% load static %}
-{% block stylesheet %}
-    {% static 'footer/about/team.css' %}
-{% block content %}
-    <div class="container">
-        <div class="login d-flex align-items-center">
-            <div class="col-12 col-md-12 col-lg-12 mx-auto">
-                {% block sub_content %}{% endblock %}
-            </div>
-        </div>
-    </div>
-{% endblock %}
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body{
+        background-color: #eee;
+        font-family: "Century Gothic";
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .title{
+        text-align: center;
+        text-transform: capitalize;
+        color: #241352;
+        margin: 10px 0;
+        position: relative;
+    }
+    
+    .title::after{
+        content: "";
+        position: absolute;
+        width: 20%; height: 2px;
+        background-image: linear-gradient(to left, transparent 5%, #726a95);
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .team-row{
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .member{
+        flex: 1 1 250px;
+        margin: 20px;
+        text-align: center;
+        padding: 20px 10px;
+        cursor: pointer;
+        max-width: 300px;
+        transition: all 0.3s;
+    }
+    
+    .member:hover{
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        transform: translateY(-20px);
+    }
+    .member img{
+        display: block;
+        width: 150px; height: 150px;
+        object-fit: cover;
+        border: 4px solid #241352;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+    
+    .member h2{
+        text-transform: uppercase;
+        font-size: 24px;
+        color: #241352;
+        margin: 15px 0 
+    }
+    
+    .member p{
+        font-size: 15px;
+        color: #838383;
+        line-height: 1.6;
+    }
+</style>
 
 <section>
     <h1 class= "title">Our Team</h1>
@@ -22,9 +86,12 @@
             <p> Computer Science Senior</p>
         </div>
         <div class= "member">
-            <img src = "maplogo180.jpeg" alt="">
+            <img src = "jam.jpeg" alt="">
             <h2> Ja'Maia Ricks </h2>
-            <p> Computer Science Senior</p>
+            <p> Computer Science Senior
+                <br> Michigan to Texas
+                <br> 21 years old
+            </p>
         </div>
         <div class= "member">
             <img src = "maplogo180.jpeg" alt="">
@@ -32,9 +99,12 @@
             <p> Computer Science Senior</p>
         </div>
         <div class= "member">
-            <img src = "maplogo180.jpeg" alt="">
+            <img src = "barbara.jpeg" alt="">
             <h2> Barbara Woods </h2>
-            <p> Computer Science Senior</p>
+            <p> Computer Science Senior
+                <br> Houston, TX
+                <br> 22 years old
+            </p>
         </div>
         <div class= "member">
             <img src = "maplogo180.jpeg" alt="">

@@ -1,0 +1,80 @@
+{% extends "../sub_base2.html" %}
+{% block title %}FAQ Page{% endblock %}
+{% load static %}
+{% block stylesheet %}
+    {% static 'footer/features/faq.css' %}
+{% block content %}
+    <div class="container">
+        <div class="login d-flex align-items-center">
+            <div class="col-12 col-md-12 col-lg-12 mx-auto">
+                {% block sub_content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+<section>
+<h3 class="title">FAQ's</h3>
+<div class="faq">
+    <div class = "question">
+        <h4>What is PVMP?</h4>
+
+        <svg width="15" height="10" viewBox="0 0 42 25">
+            <path 
+            d="M3 3L21 21L39 3" 
+            stroke="white" 
+            stroke-width="7" 
+            stroke-linecap="round"
+            />
+        </svg>
+    </div>
+        <div class="answer">
+            <p>
+                PVMP is a marketplace for PVAMU students. Users are able 
+                to sell and resell items that they own to other students on campus.
+            </p>
+    </div>
+</div>
+
+<div class="faq">
+    <div class = "question">
+        <h4>Is this only for PVAMU students?</h4>
+
+        <svg width="15" height="10" viewBox="0 0 42 25">
+            <path 
+            d="M3 3L21 21L39 3" 
+            stroke="white" 
+            stroke-width="7" 
+            stroke-linecap="round"
+            />
+        </svg>
+    </div>
+        <div class="answer">
+            <p>
+                Yes. PVMP was created for the students of PVAMU.  
+            </p>
+    </div>
+</div>
+
+<div class="faq">
+    <div class = "question">
+        <h4>Can anyone sell items?</h4>
+
+        <svg width="15" height="10" viewBox="0 0 42 25">
+            <path 
+            d="M3 3L21 21L39 3" 
+            stroke="white" 
+            stroke-width="7" 
+            stroke-linecap="round"
+            />
+        </svg>
+    </div>
+        <div class="answer">
+            <p>
+                Anyone with an account can post and sell items.  
+            </p>
+    </div>
+</div>
+
+</section>
+<script src="./app.js"></script>

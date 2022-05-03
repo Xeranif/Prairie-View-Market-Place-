@@ -1,6 +1,87 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+    <style>
+        #search-banner {
+            max-width: 1050px;
+            height: 500px;
+            border-radius; 30px;
+            background-color: #CEDDEA;
+            margin: 10px auto;
+            poisition: relative;
+            overflow: hidden;
+            background-image: url(pv.png);
+            background-repeat: no-repeat;
+            background-size: 1000px;
+            background-position: bottom right;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-banner-text {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            margin-left: 70px;
+            position: relative;
+        }
+        
+        .search-banner-text h1{
+            font-size: 3rem;
+            line-height: 55px;
+            color: #202020;
+        }
+        
+        .search-banner-text strong{
+            color: #0469C5;
+            font-size: 1.4rem;
+            marin-top: 4px;
+        
+        }
+        
+        .search-box {
+            background-color: #fff;
+            height: 50px;
+            display; flex;
+            align-items: center;
+            margin-top: 25px;
+            padding: 0px 5px 0px 20px;
+            border-radius: 30px;
+        }
+        
+        .search-box i {
+            font-size: 1.3rem;
+            color: #3b3b3b;
+            margin 0px 10px;
+        }
+        
+        .search-box .search-input {
+            height: 40px;
+            border: none;
+            width: 100%;
+            padding: 0px 10px;
+            outline: none;
+        }
+        
+        .search-box .search-btn {
+            width: 120px;
+            height: 30px;
+            border-radius: 30px;
+            background-color: #0469C5;
+            border: none;
+            color: #fff;
+            outline: none;
+            cursor: pointer;
+            transition: all ease 0.3s;
+        }
+        
+        .search-box .search-btn:hover {
+            baground-color: #1881E1;
+            trasition: all ease 0.3s;
+        }    
+        
+        </style>
     <head>
         <meta charset="utf-8" />
         <title>
@@ -22,7 +103,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
                 <div class="container-fluid px-md-4">
                     <div class="d-flex w-100 navbar-collapse">
-                        <a class="navbar-brand d-flex-inline" href="/">PVMP</a>
+                        <a class="navbar-brand d-flex-inline" href="/" style="color:#4D289C;">PVMP</a>
                         <ul class="navbar-nav me-auto mb-2 mb-md-0">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle d-none d-md-block fw500"
@@ -47,7 +128,7 @@
                                 <ul class="dropdown-menu rounded-0 border-0"
                                     aria-labelledby="navbarDropdown">
                                     <li>
-                                        <a class="dropdown-item" href="{% url "store:store_home" %}">All Items</a>
+                                        <a class="dropdown-item" href="{% url "store:all_items" %}">All Items</a>
                                     </li>
                                     {% for c in categories %}
                                         <li {% if category.slug == c.slug %}class="selected"{% endif %}>
@@ -77,6 +158,18 @@
                             </div>
                             <span class="fs15 fw500">Shop</span>
                         </button>
+
+                        <form class="d-flex w-100 d-md-none">
+                            <input class="form-control me-2"
+                                   type="search"
+                                   placeholder="Search products or FAQ"
+                                   aria-label="Search">
+                            <button class="btn btn-outline-secondary" type="submit">Search</button>
+                        </form>
+                    </div>
+
+
+
                         <div>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent2">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -191,7 +284,7 @@
         <hr>
         <div class="row pt-4">
             <div class="col-12 col-md">
-                <a class="navbar-brand d-flex-inline" href="/">PVMP</a>
+                <a class="navbar-brand d-flex-inline" href="/" style="color:#4D289C;">PVMP</a>
                     <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
                 </svg>
                 <small class="d-block mb-3 text-muted">&copy; 2021-2022</small>

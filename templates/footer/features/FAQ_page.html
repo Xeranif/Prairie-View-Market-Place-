@@ -1,7 +1,7 @@
 {% extends "../sub_base2.html" %}
 {% block title %}FAQ Page{% endblock %}
-
-<style>
+{% block content %}
+    <style>
     @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 * {
@@ -44,8 +44,8 @@ cursor: pointer;
     align-items: center;
 }
 
-.question h3 {
-    font-size: 1.8rem;
+.question h4 {
+    font-size: 1.3rem;
 }
 
 .answer {
@@ -57,7 +57,7 @@ cursor: pointer;
 .answer p {
     padding-top: 1rem;
     line-height: 1.6;
-    font-size: 1.4rem;
+    font-size: 1rem;
 }
 
 .faq.active .answer {
@@ -83,73 +83,99 @@ svg {
         transform: translateY(0px);
     }
 }
-</style>
-
-<section>
-<h3 class="title">FAQ's</h3>
-<div class="faq">
-    <div class = "question">
-        <h4>What is PVMP?</h4>
-
-        <svg width="15" height="10" viewBox="0 0 42 25">
-            <path 
-            d="M3 3L21 21L39 3" 
-            stroke="white" 
-            stroke-width="7" 
-            stroke-linecap="round"
-            />
-        </svg>
-    </div>
-        <div class="answer">
-            <p>
-                PVMP is a marketplace for PVAMU students. Users are able 
-                to sell and resell items that they own to other students on campus.
-            </p>
-    </div>
-</div>
-
-<div class="faq">
-    <div class = "question">
-        <h4>Is this only for PVAMU students?</h4>
-
-        <svg width="15" height="10" viewBox="0 0 42 25">
-            <path 
-            d="M3 3L21 21L39 3" 
-            stroke="white" 
-            stroke-width="7" 
-            stroke-linecap="round"
-            />
-        </svg>
-    </div>
-        <div class="answer">
-            <p>
-                Yes. PVMP was created for the students of PVAMU.  
-            </p>
-    </div>
-</div>
-
-<div class="faq">
-    <div class = "question">
-        <h4>Can anyone sell items?</h4>
-
-        <svg width="15" height="10" viewBox="0 0 42 25">
-            <path 
-            d="M3 3L21 21L39 3" 
-            stroke="white" 
-            stroke-width="7" 
-            stroke-linecap="round"
-            />
-        </svg>
-    </div>
-        <div class="answer">
-            <p>
-                Anyone with an account can post and sell items.  
-            </p>
-    </div>
-</div>
-</section>
-
-<script type ="text/javascript">
+    </style>
+    <section>
+        <h3 class="title">FAQ's</h3>
+        <div class="faq">
+            <div class = "question">
+                <h4>What is PVMP?</h4>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3"
+                          stroke="white"
+                          stroke-width="7"
+                          stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>
+                    PVMP is a marketplace for PVAMU students. Users are able
+                    to sell and resell items that they own to other students on campus.
+                </p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class = "question">
+                <h4>Is PVMP only for students?</h4>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3"
+                          stroke="white"
+                          stroke-width="7"
+                          stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>
+                    Yes. PVMP was created soely for students on Prairie View's campus. 
+                    When creating an account you are only able to provide the domain 
+                    @pvamu.edu, which only pvamu students have.
+                </p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class = "question">
+                <h4>How do I sell an item?</h4>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3"
+                          stroke="white"
+                          stroke-width="7"
+                          stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>
+                    Users must send their item info (product name, category, images, and
+                     price) to the admin email account. Then the admin will accept or deny 
+                     the request and post the item.
+                </p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class = "question">
+                <h4>How do I create an account?</h4>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3"
+                          stroke="white"
+                          stroke-width="7"
+                          stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>
+                    Navigate to the Login page. Click the link that says "Create an account" 
+                    and fill out the requested information.
+                </p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class = "question">
+                <h4>How do I delete my account?</h4>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3"
+                          stroke="white"
+                          stroke-width="7"
+                          stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>
+                    Once logged in, navigate to your account dashboard. Click Login &amp; Security. 
+                    at the bottom of the page a red button that says "Delete your Account" is 
+                    present. Click that button.
+                </p>
+            </div>
+        </div>
+    </section>
+    <script type ="text/javascript">
     const faqs = document.querySelectorAll(".faq");
 
     faqs.forEach((faq) => {
@@ -157,4 +183,5 @@ svg {
             faq.classList.toggle("active");
         });
     });
-</script>
+    </script>
+{% endblock %}

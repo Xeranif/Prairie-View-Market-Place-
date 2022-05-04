@@ -21,3 +21,21 @@ def category_list(request, category_slug=None):
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug, is_active=True)
     return render(request, "store/single.html", {"product": product})
+
+def footer_privacy(request):
+    return render(request, 'footer/about/privacy.html')
+
+def footer_team(request):
+    return render(request, 'footer/about/team.html')
+
+def footer_terms(request):
+    return render(request, 'footer/about/terms.html')
+
+def footer_faq(request):
+    return render(request, 'footer/features/FAQ_page.html')
+
+def footer_howto(request):
+    return render(request, 'footer/features/howto_page.html')
+
+def footer_sellingaccount(request):
+    return render(request, 'footer/features/selling_account.html')

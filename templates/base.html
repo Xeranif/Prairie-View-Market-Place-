@@ -22,16 +22,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
                 <div class="container-fluid px-md-4">
                     <div class="d-flex w-100 navbar-collapse">
-                        <a class="navbar-brand d-flex-inline" href="/">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="36"
-                                 height="36"
-                                 fill="currentColor"
-                                 class="bi bi-asterisk"
-                                 viewBox="0 0 16 16">
-                                <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
-                            </svg>
-                        </a>
+                        <a class="navbar-brand d-flex-inline" href="/" style="color:#4D289C;">PVMP</a>
                         <ul class="navbar-nav me-auto mb-2 mb-md-0">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle d-none d-md-block fw500"
@@ -40,7 +31,7 @@
                                    role="button"
                                    data-bs-toggle="dropdown"
                                    aria-expanded="false">
-                                    All
+                                    Categories
                                     <i class="ps-1">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                              width="16"
@@ -56,7 +47,7 @@
                                 <ul class="dropdown-menu rounded-0 border-0"
                                     aria-labelledby="navbarDropdown">
                                     <li>
-                                        <a class="dropdown-item" href="{% url "store:store_home" %}">All</a>
+                                        <a class="dropdown-item" href="{% url "store:all_items" %}">All Items</a>
                                     </li>
                                     {% for c in categories %}
                                         <li {% if category.slug == c.slug %}class="selected"{% endif %}>
@@ -86,6 +77,7 @@
                             </div>
                             <span class="fs15 fw500">Shop</span>
                         </button>
+
                         <div>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent2">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -184,7 +176,7 @@
                 <form class="d-flex w-100 d-md-none">
                     <input class="form-control me-2"
                            type="search"
-                           placeholder="Search products or FAQ"
+                           placeholder="Search products ..."
                            aria-label="Search">
                     <button class="btn btn-outline-secondary" type="submit">Search</button>
                 </form>
@@ -200,12 +192,7 @@
         <hr>
         <div class="row pt-4">
             <div class="col-12 col-md">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     width="16"
-                     height="16"
-                     fill="currentColor"
-                     class="bi bi-asterisk"
-                     viewBox="0 0 16 16">
+                <a class="navbar-brand d-flex-inline" href="/" style="color:#4D289C;">PVMP</a>
                     <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
                 </svg>
                 <small class="d-block mb-3 text-muted">&copy; 2021-2022</small>
@@ -214,60 +201,13 @@
                 <h5>Features</h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a class="link-secondary text-decoration-none" href="#">Cool stuff</a>
+                        <a class="link-secondary text-decoration-none" href="{% url 'store:footer_faq' %}">FAQ Page</a>
                     </li>
                     <li>
-                        <a class="link-secondary text-decoration-none" href="#">Random feature</a>
+                        <a class="link-secondary text-decoration-none" href="{% url 'store:footer_howto' %}">How To Page</a>
                     </li>
                     <li>
-                        <a class="link-secondary text-decoration-none" href="#">Team feature</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Stuff for developers</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Another one</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Last time</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6 col-md fs15">
-                <h5>
-                    Resources
-                </h5>
-                <ul class="list-unstyled">
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Resource name</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Resource</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Another resource</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Final resource</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6 col-md fs15">
-                <h5>
-                    Resources
-                </h5>
-                <ul class="list-unstyled">
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Business</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Education</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Government</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Gaming</a>
+                        <a class="link-secondary text-decoration-none" href="{% url 'store:footer_sellingaccount' %}">Start a Selling Account</a>
                     </li>
                 </ul>
             </div>
@@ -277,16 +217,13 @@
                 </h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a class="link-secondary text-decoration-none" href="#">Team</a>
+                        <a class="link-secondary text-decoration-none" href="{% url 'store:footer_team' %}">Team</a>
                     </li>
                     <li>
-                        <a class="link-secondary text-decoration-none" href="#">Locations</a>
+                        <a class="link-secondary text-decoration-none" href="{% url 'store:footer_privacy' %}">Privacy</a>
                     </li>
                     <li>
-                        <a class="link-secondary text-decoration-none" href="#">Privacy</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Terms</a>
+                        <a class="link-secondary text-decoration-none" href="{% url 'store:footer_terms' %}">Terms</a>
                     </li>
                 </ul>
             </div>

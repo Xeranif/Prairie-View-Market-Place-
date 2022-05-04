@@ -1,0 +1,187 @@
+{% extends "../sub_base2.html" %}
+{% block title %}FAQ Page{% endblock %}
+{% block content %}
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    background: #fff;
+    color: #1c1c1c;
+}
+
+section {
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 3rem;
+    margin: 2rem 0rem;
+}
+
+.faq {
+max-width: 700px;
+margin-top: 2rem;
+padding-bottom: 1rem;
+border-bottom: 2px solid #1c1c1c;
+cursor: pointer;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.question h4 {
+    font-size: 1.3rem;
+}
+
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.4s ease;
+}
+
+.answer p {
+    padding-top: 1rem;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.faq.active .answer {
+        max-height: 300px;
+        animation: fade 1s ease-in-out;
+}
+
+.faq.active svg {
+    transform: rotate(180deg);
+}
+
+svg {
+    transition: transform 0.5s ease-in;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+    </style>
+    <section>
+        <h3 class="title">FAQ's</h3>
+        <div class="faq">
+            <div class = "question">
+                <h4>What is PVMP?</h4>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3"
+                          stroke="white"
+                          stroke-width="7"
+                          stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>
+                    PVMP is a marketplace for PVAMU students. Users are able
+                    to sell and resell items that they own to other students on campus.
+                </p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class = "question">
+                <h4>Is PVMP only for students?</h4>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3"
+                          stroke="white"
+                          stroke-width="7"
+                          stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>
+                    Yes. PVMP was created soely for students on Prairie View's campus. 
+                    When creating an account you are only able to provide the domain 
+                    @pvamu.edu, which only pvamu students have.
+                </p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class = "question">
+                <h4>How do I sell an item?</h4>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3"
+                          stroke="white"
+                          stroke-width="7"
+                          stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>
+                    Users must send their item info (product name, category, images, and
+                     price) to the admin email account. Then the admin will accept or deny 
+                     the request and post the item.
+                </p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class = "question">
+                <h4>How do I create an account?</h4>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3"
+                          stroke="white"
+                          stroke-width="7"
+                          stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>
+                    Navigate to the Login page. Click the link that says "Create an account" 
+                    and fill out the requested information.
+                </p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class = "question">
+                <h4>How do I delete my account?</h4>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3"
+                          stroke="white"
+                          stroke-width="7"
+                          stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>
+                    Once logged in, navigate to your account dashboard. Click Login &amp; Security. 
+                    at the bottom of the page a red button that says "Delete your Account" is 
+                    present. Click that button.
+                </p>
+            </div>
+        </div>
+    </section>
+    <script type ="text/javascript">
+    const faqs = document.querySelectorAll(".faq");
+
+    faqs.forEach((faq) => {
+        faq.addEventListener("click", () => {
+            faq.classList.toggle("active");
+        });
+    });
+    </script>
+{% endblock %}

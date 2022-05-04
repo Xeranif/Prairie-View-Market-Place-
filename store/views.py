@@ -34,5 +34,3 @@ def footer_terms(request):
 def footer_faq(request):
     return render(request, 'footer/features/FAQ_page.html')
 
-def footer_sellingaccount(request):
-    return render(request, 'footer/features/selling_account.html')
